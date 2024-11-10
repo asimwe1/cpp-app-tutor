@@ -32,33 +32,11 @@ The basic class structure in Qt is shown in the diagram. Here’s an overview of
 
 6. **QGraphicsView**: A widget for displaying graphical items, often used in more complex interfaces.
 
-## Example: QPushButton with Inheritance
+## Example: Hierarchy graphical presantation
 
 Here’s a simple example that demonstrates the hierarchy by creating a `QPushButton` widget and customizing it. Since `QPushButton` inherits from `QAbstractButton`, which inherits from `QWidget`, it inherits many properties and functions from these parent classes.
 
-```cpp
-#include <QApplication>
-#include <QPushButton>
-#include <QFont>
-#include <QIcon>
-
-int main(int argc, char **argv) {
-    QApplication app(argc, argv);
-
-    // Create a QPushButton, which inherits from QAbstractButton and QWidget
-    QPushButton button("Click Me");
-    QFont font("Courier", 12, QFont::Bold);
-    button.setFont(font);
-
-    // Set an icon, tooltip, and display the button
-    QIcon icon("path/to/icon.png");
-    button.setIcon(icon);
-    button.setToolTip("This is a button");
-
-    button.show();
-    return app.exec();
-}
-```
+![class heirarchy](/home/landry/Documents/projects/cpp/cpp-app/public/heirerchy.png)
 
 #### Explanation
 
