@@ -1,38 +1,40 @@
-# cpp-app-tutor
+# cpp-app-tutorial
 
-## Getting Started: Creating a "Hello World" Button
+## Lesson 2: Adding Custom Fonts to a "Hello World" Button
 
-This repo walks through the initial setup and creation of a simple "Hello World" button in Qt Creator.
+This lesson builds on the previous "Hello World" button tutorial by adding a custom font and tooltip to the button using Qt.
 
 ### Prerequisites
 
-Ensure you have:
-- Installed and configured the Qt environment.
+Ensure that you have:
+- Completed **Lesson 1** and created a basic "Hello World" button on the branch `L1-helloWorld`.
+- The Qt environment set up.
 
-### Step 1: Set Up the Project
+### Step 1: Create a New Branch
 
-1. Open Qt Creator and create a new project.
-2. Clone this branch into your project directory to use it as a base:
-   ```bash
-   git clone git@github.com:asimwe1/cpp-app-tutor.git
-   ```
-   or
-   ```bash
-   git clone https://github.om/asimwe1/cpp-app-tutor.git
-   ```
-3. Open the project in Qt Creator.
+To keep things organized, create a new branch for this lesson:
+```bash
+git checkout -b L2-helloWorldButtonFont
+```
 
-### Step 2: Write the Code
+### Step 2: Update `main.cpp`
 
-In your project, open or create the `main.cpp` file and add the following code:
+Replace the contents of your `main.cpp` file with the following code:
 
 ```cpp
 #include <QApplication>
 #include <QPushButton>
+#include <QFont>
 
 int main(int argc, char **argv) {
     QApplication app(argc, argv);
-    QPushButton button("Hello World!");
+
+    QPushButton button;
+    button.setText("Press here");
+    button.setToolTip("a toolTip");
+
+    QFont font("Courier");
+    button.setFont(font);
     button.show();
 
     return app.exec();
@@ -41,17 +43,20 @@ int main(int argc, char **argv) {
 
 ### Explanation of `main.cpp`
 
-- **QApplication app(argc, argv)**: Initializes the application. This is necessary for handling events.
-- **QPushButton button("Hello World!")**: Creates a button with the text "Hello World!".
-- **button.show()**: Displays the button on the screen.
-- **return app.exec()**: Starts the event loop, keeping the application running until it's closed.
+- **QPushButton button;**: Creates an empty button object.
+- **button.setText("Press here");**: Sets the text for the button.
+- **button.setToolTip("a toolTip");**: Adds a tooltip that appears when you hover over the button.
+- **QFont font("Courier");**: Sets the button's font to "Courier."
+- **button.setFont(font);**: Applies the font to the button.
+- **button.show();**: Displays the button.
+- **return app.exec();**: Starts the application event loop.
 
-### Step 3: Run the Application
+### Step 3: Build and Run
 
-1. Build the project by selecting the **Build** button or pressing `Ctrl+B`.
-2. Run the application by selecting the **Run** button or pressing `Ctrl+R`.
-3. A window with a "Hello World!" button should appear.
+1. Build the project by selecting **Build** or pressing `Ctrl+B`.
+2. Run the application by selecting **Run** or pressing `Ctrl+R`.
+3. A window with a button labeled "Press here" in "Courier" font should appear, with a tooltip that shows "a toolTip" when hovered over.
 
 ---
 
-This should set up a basic Qt application with a functional button to get you started!
+This should successfully build and run your new button with custom styling in Qt!
