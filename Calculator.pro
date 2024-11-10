@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = Calculator
+TARGET = cpp-app
 
 QT += core gui widgets
 

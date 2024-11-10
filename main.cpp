@@ -7,7 +7,7 @@ int main(int argc, char **argv){
     QApplication app (argc, argv);
 
     QPushButton button;
-    QIcon icon ("/home/landry/Pictures/logo.jpeg");
+    QIcon icon ("/home/landry/Documents/projects/cpp/cpp-app/public/logo.jpeg");
     QFont font ("Courier", -1, 300, false);
     button.setIcon(icon);
     button.setText("Press here");
